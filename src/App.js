@@ -62,8 +62,7 @@ loadUser = (data) => {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
       rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height) 
-
+      bottomRow: height - (clarifaiFace.bottom_row * height)
     }
   }
 
@@ -78,7 +77,7 @@ loadUser = (data) => {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('https://sbback.azurewebsites.net/imageUrl', {
+      fetch('https://ztmproject.herokuapp.com/imageUrl', {
         method: 'post',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
@@ -88,7 +87,7 @@ loadUser = (data) => {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://sbback.azurewebsites.net/image', {
+          fetch('https://ztmproject.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
