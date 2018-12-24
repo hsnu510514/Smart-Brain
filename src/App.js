@@ -79,7 +79,6 @@ loadUser = (data) => {
     this.setState({imageUrl: this.state.input});
       fetch('https://ztmproject.herokuapp.com/imageUrl', {
         method: 'post',
-        mode: 'no-cors',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
           input: this.state.input
@@ -90,7 +89,6 @@ loadUser = (data) => {
         if (response) {
           fetch('https://ztmproject.herokuapp.com/image', {
             method: 'put',
-            mode: 'no-cors',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
               id: this.state.user.id
